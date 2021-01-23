@@ -1,2 +1,0 @@
-"0","table <- data.frame(Model=c('VBT','VLR','LRBT','VLR-H2H','LRBT-H2H'),Log_Score = c(log_sr,log_sr1,log_sr2,log_sr3,log_sr4))"
-"0","table"

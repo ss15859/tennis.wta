@@ -1,2 +1,0 @@
-"0","features <- feature_matrix_train(my_data, match_date = ""2019-01-01"",features = c('surface_form', 'age', 'match_form'))"
-"0","feature_matrix <- features$matrix"

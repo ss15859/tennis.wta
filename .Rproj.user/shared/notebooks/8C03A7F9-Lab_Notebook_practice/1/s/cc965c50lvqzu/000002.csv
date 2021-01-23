@@ -1,7 +1,0 @@
-"0","probs <- as.numeric(sigma_f(f))"
-"0","log_sr4 <- sum(log(probs))/length(probs)"
-"0","log_sr4"
-"1","[1]"
-"1"," -0.6701314"
-"1","
-"

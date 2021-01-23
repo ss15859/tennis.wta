@@ -1,3 +1,0 @@
-"0","tib <- tibble(Features=rownames(x_dat),Magnitude=(what))"
-"0","ggplot(data=tib, aes(x=Features, y=Magnitude)) +"
-"0","  geom_bar(stat=""identity"",fill= 'limegreen')"

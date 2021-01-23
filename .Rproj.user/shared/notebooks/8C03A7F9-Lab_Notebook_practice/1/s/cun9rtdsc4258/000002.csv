@@ -1,1 +1,0 @@
-"0","ggplot(df3, aes(x=log(probs))) + geom_histogram(binwidth = 0.05,fill= 'limegreen') + geom_vline(xintercept =  log(0.5), color='red',size=1.5)"

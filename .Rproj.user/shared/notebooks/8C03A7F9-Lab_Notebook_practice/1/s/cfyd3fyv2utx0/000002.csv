@@ -1,5 +1,0 @@
-"0","path_allfiles <- system.file(""extdata"", package = ""tennis.wta"")"
-"0","file_list = list.files(path_allfiles)"
-"0","#variables is the list of which columns we will be using"
-"0","variables <- c('tourney_date','surface', 'winner_id', 'loser_id', 'winner_age', 'loser_age')"
-"0","my_data <- load_data(file_list, variables)"

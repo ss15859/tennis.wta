@@ -1,6 +1,0 @@
-"0","#initialise the variables"
-"0",""
-"0","w <- array(0, c(no_players, no_players))"
-"0","n <- array(0, c(no_players, no_players))"
-"0","row.names(w) <- players"
-"0","colnames(w) <- row.names(w)"
