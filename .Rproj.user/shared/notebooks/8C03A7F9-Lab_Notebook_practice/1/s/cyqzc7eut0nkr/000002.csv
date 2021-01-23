@@ -1,0 +1,8 @@
+"0",""
+"0","train_data <- my_data %>% filter(tourney_date < ""2019-01-01"")"
+"0","test_data <- my_data %>% filter(tourney_date > ""2019-01-01"")"
+"0",""
+"0","# find the IDs and number of players in the training set"
+"0",""
+"0","players <- unique(c(train_data$winner_id, train_data$loser_id))"
+"0","no_players <- length(players)"

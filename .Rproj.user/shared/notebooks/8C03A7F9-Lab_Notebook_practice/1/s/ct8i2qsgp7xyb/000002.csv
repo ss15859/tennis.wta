@@ -1,0 +1,6 @@
+"0","log_sr <- sum(log(probs))/length(probs)"
+"0","log_sr"
+"1","[1]"
+"1"," -0.6859053"
+"1","
+"

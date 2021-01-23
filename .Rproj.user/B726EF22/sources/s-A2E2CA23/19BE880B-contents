@@ -1,0 +1,512 @@
+This method is also known as the Newton-Raphson method. It was designed to find the root of a function. It works by first assuming that $g$ has a Taylor expansion around $x_0$:
+\begin{equation}
+g(x) = g(x_0) + g'(x_0)(x-x_0).$$
+Setting this equal to 0 (finding the root) we get
+$$ 0 = g(x_0) + g'(x_0)(x-x_0)
+func <- expression(sin(e^0.05x)-cos(2x)/2)
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func(2)
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func_dif1 <- deriv(func)
+func_dif1 <- deriv(func,namevec = c("x1","x2"))
+func_dif1 <- deriv(func, namevec = "x")
+func_dif2 <- deriv(func_dif1, namevec="x")
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func_dif1 <- deriv(func, namevec = "x")
+func_dif2 <- deriv(func_dif1, namevec="x")
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func_dif1 <- deriv(func, namevec = "x")
+func_dif2 <- deriv(func_dif1, namevec="x")
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func_dif1 <- D(func, namevec = "x")
+func <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+func_dif1 <- D(func, "x")
+func_dif2 <- D(func_dif1, "x")
+f <- function(x){eval(ex)}
+y_vec <- apply(x_vec, 1, f)
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- apply(x_vec, 1, f)
+y_vec <- sapply(x_vec, f)
+ex <- expression(sin(exp(0.05*x))-cos(2*x)/2)
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+y_vec %>% ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+library(ggplot2)
+library(magrittr)
+y_vec %>% ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+temp
+temp <- ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+temp
+ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+y_vec <- sapply(x_vec, f)
+ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+temp
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+ex <- expression(sin(exp(0.05*x))-cos(2*x)/2 + sin(x)^2-cos(x^2))
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_point(mapping = aes(x=x_vec, y=y_vec))
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+ex <- expression(sin(x)-cos(2*x)/2 + sin(x)^2-cos(x^2))
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+ex <- expression(sin(x)-cos(2*x)/2)
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+x_vec <- seq(-10,10, length.out=1000)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+ex <- expression(sin(2*x)-cos(x))
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=1000)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+ex <- expression(sin(2*x)-cos(x))
+f <- function(x){eval(ex)}
+x_vec <- seq(-10,10, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+x_vec <- seq(0,2*pi, length.out=100)
+y_vec <- sapply(x_vec, f)
+x_y <- data.frame(x=x_vec, y=y_vec)
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+sapply(seq(0,2*pi, length.out=100), f)
+ex <- expression(sin(2*x)-cos(x))
+#plot
+f <- function(x){eval(ex)}
+x_y <- data.frame(x=seq(0,2*pi, length.out=100), y=sapply(seq(0,2*pi, length.out=100), f))
+x_y %>% ggplot + geom_line(mapping = aes(x=x_vec, y=y_vec))
+x <- 2
+for (i in 1:10) {
+x <- x - f1(x)/f2(x)
+}
+x_y %>% ggplot + geom_line(mapping = aes(x=x, y=y))
+x <- 2
+for (i in 1:10) {
+x <- x - f1(x)/f2(x)
+cat(x, '\n')
+}
+ex <- expression(sin(2*x)-cos(x))
+#plot
+f <- function(x){eval(ex)}
+x_y <- data.frame(x=seq(0,2*pi, length.out=100), y=sapply(seq(0,2*pi, length.out=100), f))
+x_y %>% ggplot + geom_line(mapping = aes(x=x, y=y))
+ex_dif1 <- D(ex, "x")
+ex_dif2 <- D(ex_dif1, "x")
+f1 <- function(x){eval(ex_dif1)}
+f2 <- function(x){eval(ex_dif2)}
+x <- 2
+for (i in 1:10) {
+x <- x - f1(x)/f2(x)
+cat(x, '\n')
+}
+x <- 1
+for (i in 1:10) {
+x <- x - f1(x)/f2(x)
+cat(x, '\n')
+}
+### Non-linear least-squares problems
+In these problems we are given a dataset $\{(x_i, y_i)\}_{i=1}^{m}$ and a model $y=f(x, \beta)$, where $\beta \in \mathbb{R}^n$. We look to find
+\begin{equation}
+\text{arg}\min_{\beta} \sum^{m}_{i=1}(y_i - f(x_i, \beta))^2
+\end{equation}
+install.packages("pracma")
+f <- function(x_1, x_2) {return(cos((1/3)*x_1)+ (1/10)*x_2^3 - sin(x_1^2) - x_1)}
+meshgrid(seq(-10,10, length.out=100))
+library(pracma)
+f <- function(x_1, x_2) {return(cos((1/3)*x_1)+ (1/10)*x_2^3 - sin(x_1^2) - x_1)}
+meshgrid(seq(-10,10, length.out=100))
+f <- function(x, y) {return(cos((1/3)*x)+ (1/10)*y^3 - sin(y^2) - x)}
+xy_grid <- meshgrid(seq(-10,10, length.out=100))
+z <- matrix(mapply(f, x_grid))
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+z
+optim(c(0,0), function(x) f(x[1], x[2]))
+system.time(temp <- nlm(function(x) f1(x[1], x[2]), c(0,0)))
+system.time(temp <- nlm(function(x) f1(x[1], x[2]), c(0,0)))
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + (1/10)*y^2 - sin(y^2) - sin(x^3/100) + sin(x) )}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+f1 <- deriv(expression(cos((1/3)*x)+ cos(y) + (1/10)*y^2 - sin(y^2) - sin(x^3/100) + sin(x)),
+namevec = c('x', 'y'), function.arg=T, hessian=T)
+system.time(temp <- nlm(function(x) f1(x[1], x[2]), c(0,0)))
+print(temp)
+system.time(temp <- nlm(function(x) f1(x[1], x[2]), c(-1,-1)))
+print(temp)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + sin(cos(x)) (1/10)*y^2 - sin(y^2) - sin(x^2/100) + sin(x))}
+x <- seq(-2*pi,2*pi, length.out=100)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + sin(cos(x)) (1/10)*y^2 - sin(x))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + sin(cos(x)) (1/10)*y^2 - sin(x))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + sin(cos(x)) (1/10)*y^2 - sin(x))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+mapply(f, xy_grid$X, xy_grid$Y)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y) + sin(cos(x)) - (1/10)*y^2 - sin(x))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y-4) + sin(cos(x)) - (1/10)*y^2 - sin(x) + cos(x*y-10x-1/3-y))}
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y-4) + sin(cos(x)) - (1/10)*y^2 - sin(x) + cos(x*y-10*x-1/3-y))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+contour(x, x, z)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y-4) - (1/10)*y^2 - sin(x) + cos(x*y-10*x-1/3-y))}
+x <- seq(-2*pi,2*pi, length.out=100)
+xy_grid <- meshgrid(x)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+f <- function(x, y) {return(cos((1/3)*x)+ cos(y-4) - (1/10)*y^2 - sin(x) + cos(x*y-x/3-y))}
+x <- seq(-2*pi,2*pi, length.out=100)
+z <- matrix(mapply(f, xy_grid$X, xy_grid$Y), nrow=100)
+contour(x, x, z)
+system.time(temp <- optim(c(0,0), function(x) f(x[1], x[2]), method="BFGS"))
+print(temp)
+system.time(temp <- optim(c(-1,-1), function(x) f(x[1], x[2]), method="L-BFGS-B"))
+print(temp)
+system.time(temp <- optim(c(0,0), function(x) f(x[1], x[2])))
+print(temp)
+system.time(temp <- optim(c(-1,-1), function(x) f(x[1], x[2])))
+print(temp)
+rand_mat <- matrix(round(runif(100,-3,3), 10, 10)
+rand_mat <- matrix(round(runif(100,-3,3), 10, 10))
+rand_mat <- matrix(round(runif(100,-3,3), 10, 10)))
+rand_mat <- matrix(round(runif(100,-3,3), 10, 10)))
+rand_mat <- matrix(round(runif(100,-3,3), 10, 10))
+rand_mat <- matrix(round(runif(100,-3,3)), 10, 10)
+A
+A <- matrix(round(runif(100,-3,3)), 10, 10)
+gamma <- 0.2
+D <- matrix(0, 10, 10)
+diag(D) <- gamma/diag(A)
+A
+diag(D) <- gamma/diag(A)
+diag(D)
+A <- matrix(round(runif(100,-20,20)), 10, 10)
+gamma <- 0.2
+D <- matrix(0, 10, 10)
+diag(D) <- gamma/diag(A)
+diag(D)
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+gamma <- 0.2
+D <- matrix(0, m, m)
+diag(D) <- gamma/diag(A)
+m <- 10
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+gamma <- 0.2
+D <- matrix(0, m, m)
+diag(D) <- gamma/diag(A)
+L <- diag(m)-D%*%A
+L
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+gamma <- 0.2
+D <- matrix(0, m, m)
+diag(D) <- gamma/diag(A)
+D
+A
+D%*%A
+b <- t(round(runif(m,-20,20)))
+b
+b <- t(t(round(runif(m,-20,20))))
+b
+A[1,]
+A[i,i] <- sum(abs(A[i,])-abs(A[i,i]))
+for (i in 1:m) {
+A[i,i] <- sum(abs(A[i,])-abs(A[i,i]))
+}
+A
+m <- 10
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+for (i in 1:m) {
+A[i,i] <- sum(abs(A[i,])-abs(A[i,i]))
+}
+A
+sum(abs(A[1,]))
+sum(abs(A[1,])-abs(A[1,1]))
+m <- 10
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+for (i in 1:m) {
+A[i,i] <- sum(abs(A[i,])-abs(A[i,i]))
+}
+A
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+A
+sum(abs(A[1,])-abs(A[1,1]))
+2+15+14+18+16+10+7+14+3
+abs(-2)
+sum(abs(A[1,]))
+sum(abs(A[1,]))-abs(A[1,1])
+A[i,i] <- sum(abs(A[i,])) - abs(A[i,i])
+A[i,i]
+m <- 10
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+for (i in 1:m) {
+A[i,i] <- sum(abs(A[i,])) - abs(A[i,i])
+}
+A
+13+8+15+11+16+9+15+6+9
+m <- 10
+A <- matrix(round(runif(m^2,-20,20)), m, m)
+for (i in 1:m) {
+A[i,i] <- sum(abs(A[i,])) - abs(A[i,i]) + 1
+}
+b <- t(t(round(runif(m,-20,20))))
+gamma <- 0.2
+D <- matrix(0, m, m)
+diag(D) <- gamma/diag(A)
+L <- diag(m)-D%*%A
+f <- D%*%b
+f
+b
+D
+require("knitr")
+opts_knit$set(root.dir = "../tennis_wta/rel_files/")
+file_list = list.files()
+load_data <- function(file_list, variables=FALSE) {
+no_files <- length(file_list)
+for (file_index in 1:no_files) {
+temp_file <- read.csv(file_list[[file_index]])
+if (class(variables)=="character") {
+temp_file <- subset(temp_file, select = variables)
+}
+if (file_index==1) {
+melted_files <- temp_file
+} else {
+melted_files <- rbind(melted_files, temp_file)
+}
+}
+return(melted_files)
+}
+# variables <- c('surface', 'winner_id', 'loser_id', 'winner_age', 'loser_age')
+my_data <- load_data(file_list)
+require("knitr")
+opts_knit$set(root.dir = "../tennis_wta/rel_files/")
+file_list = list.files()
+load_data <- function(file_list, variables=FALSE) {
+no_files <- length(file_list)
+for (file_index in 1:no_files) {
+temp_file <- read.csv(file_list[[file_index]])
+if (class(variables)=="character") {
+temp_file <- subset(temp_file, select = variables)
+}
+if (file_index==1) {
+melted_files <- temp_file
+} else {
+melted_files <- rbind(melted_files, temp_file)
+}
+}
+return(melted_files)
+}
+# variables <- c('surface', 'winner_id', 'loser_id', 'winner_age', 'loser_age')
+my_data <- load_data(file_list)
+head(my_data, 5)
+install.packages("testthat")
+setwd("~/Documents/group-proj/tennis.wta")
+usethis::use_testthat()
+library(testthat)
+usethis::use_testthat()
+install.packages("usethis")
+usethis::use_testthat()
+usethis::use_testthat()
+install.packages("devtools")
+remotes::install_github(repo = "r-lib/devtools",dependencies = TRUE,upgrade = TRUE)
+remotes::install_github(repo = "r-lib/devtools",dependencies = TRUE,upgrade = TRUE)
+library(devtools)
+library("devtools")
+remotes::install_github(repo = "r-lib/usethis",dependencies = TRUE,upgrade = TRUE)
+library(devtools)
+library("devtools")
+library('devtools')
+remotes::install_github(repo = "r-lib/devtools",dependencies = TRUE,upgrade = TRUE)
+library(devtools)
+install.packages("devtools")
+library(usethis)
+install.packages("usethis")
+install.packages(c("backports", "broom", "colorspace", "DBI", "dplyr", "GGally", "ggplot2", "hms", "httpuv", "isoband", "lubridate", "Matrix", "VGAM"))
+library(devtools)
+install.packages(devtools)
+install.packages('devtools')
+install.packages('usethis')
+install.packages("usethis")
+remotes::install_github(repo = "r-lib/devtools",dependencies = TRUE,upgrade = TRUE)
+library(devtools)
+remotes::install_github(repo = "r-lib/usethis",dependencies = TRUE,upgrade = TRUE)
+libmagick++-dev
+remotes::install_github(repo = "r-lib/usethis",dependencies = TRUE,upgrade = TRUE)
+library(devtools)
+install.packages("usethis")
+remotes::install_github(repo = "r-lib/usethis",dependencies = TRUE,upgrade = TRUE)
+remotes::install_github(repo = "r-lib/devtools",dependencies = TRUE,upgrade = TRUE)
+usethis::use_testthat()
+devtools::test()
+install.packages("igraph")
+devtools::test()
+sigma <- matrix(0.5*c(4,2,2,5),nrow=2,ncol=2)
+C1 <- cbind(mvrnorm(300,c(0,0),sigma),1,1)
+C2 <- cbind(mvrnorm(400,c(3,3),sigma),1,-1)
+Dat <- cbind(t(C1),t(C2))
+x_dat <- Dat[1:3,]
+y_dat <- Dat[4,]
+library(MASS)
+sigma <- matrix(0.5*c(4,2,2,5),nrow=2,ncol=2)
+C1 <- cbind(mvrnorm(300,c(0,0),sigma),1,1)
+C2 <- cbind(mvrnorm(400,c(3,3),sigma),1,-1)
+Dat <- cbind(t(C1),t(C2))
+x_dat <- Dat[1:3,]
+y_dat <- Dat[4,]
+what <- log_reg(x_dat,y_dat)
+x <- seq(-5,5,length=1000)
+yglm <- y_dat==1
+glmpoo <- glm(yglm~x_dat[1,]+x_dat[2,],family=binomial)
+order <- c(2,3,1)
+wglm <- glmpoo$coefficients[order]
+lines(x,f(x,wglm),col='blue')
+sigma <- matrix(0.5*c(4,2,2,5),nrow=2,ncol=2)
+C1 <- cbind(mvrnorm(300,c(0,0),sigma),1,1)
+C2 <- cbind(mvrnorm(400,c(3,3),sigma),1,-1)
+Dat <- cbind(t(C1),t(C2))
+x_dat <- Dat[1:3,]
+y_dat <- Dat[4,]
+what <- log_reg(x_dat,y_dat)
+x <- seq(-5,5,length=1000)
+yglm <- y_dat==1
+glmpoo <- glm(yglm~x_dat[1,]+x_dat[2,],family=binomial)
+order <- c(2,3,1)
+wglm <- glmpoo$coefficients[order]
+wglm
+x_dat
+head(x_dat)
+C1
+wglm
+what
+sigma <- matrix(0.5*c(4,2,2,5),nrow=2,ncol=2)
+C1 <- cbind(mvrnorm(300,c(0,0),sigma),1,1)
+C2 <- cbind(mvrnorm(400,c(3,3),sigma),1,-1)
+Dat <- cbind(t(C1),t(C2))
+x_dat <- Dat[1:3,]
+y_dat <- Dat[4,]
+what <- log_reg(x_dat,y_dat)
+yglm <- y_dat==1
+glmpoo <- glm(yglm~x_dat[1,]+x_dat[2,],family=binomial)
+order <- c(2,3,1)
+wglm <- glmpoo$coefficients[order]
+what
+wglm
+test1 <- norm(abs(wglm-what))
+norm
+norm(1:3)
+test1 <- sqrt(sum(abs(wglm-what)^2))
+test1
+test1 <- sqrt(sum(abs(wglm+what)^2))
+test1
+test3 <- test1 || test2
+epsilon = 0.01
+test1 <- sqrt(sum(abs(wglm-what)^2)) < epsilon
+test2 <- sqrt(sum(abs(wglm+what)^2)) < epsilon
+test3 <- test1 || test2
+test3
+#generate toy data
+sigma <- matrix(0.5*c(4,2,2,5),nrow=2,ncol=2)
+C1 <- cbind(mvrnorm(300,c(0,0),sigma),1,1)
+C2 <- cbind(mvrnorm(400,c(3,3),sigma),1,-1)
+Dat <- cbind(t(C1),t(C2))
+x_dat <- Dat[1:3,]
+y_dat <- Dat[4,]
+w_logreg <- log_reg(x_dat,y_dat)
+y_glm <- y_dat==1
+glm_output <- glm(y_glm~x_dat[1,]+x_dat[2,],family=binomial)
+w_glm <- glm_output$coefficients[order]
+epsilon = 0.01
+test1 <- sqrt(sum(abs(w_glm-w_logreg)^2)) < epsilon
+test2 <- sqrt(sum(abs(w_glm+w_logreg)^2)) < epsilon
+test3 <- test1 || test2
+expect_true(test3)
+test3
+devtools::test()
+#' Sigmoid function
+#'
+#' Define the sigmoid function.
+#'
+#' @usage sigma_f(t)
+#'
+#' @parma t input to the sigmoid function
+#'
+#' @return output of sigmoid function
+#' @export
+sigma_f <- function(t) {
+return(1/(1+exp(t)))
+}
+#' Likelihood function
+#'
+#' Define the negative log-likelihood function to be maximised.
+#'
+#' @usage log_reg_naive(w, x, y)
+#'
+#' @param w matrix where the (i,j) element is number of matches player i has beaten player j
+#' @param x feature matrix for training data
+#' @param y output for training data
+#'
+#' @return negative log-likelihood
+#' @export
+log_reg_naive <- function(w, x, y) {
+f <- t(w)%*%as.matrix(x)
+return(-sum(log(sigma_f(f*y))))
+}
+#' Logistic regression
+#'
+#' Define a function that returns the estimated weight parameters using logistic regression.
+#'
+#' @usage log_reg(x,y)
+#'
+#' @param x feature matrix for training data
+#' @param y output for training data
+#'
+#' @return estimated weight parameters
+#' @export
+log_reg <- function(x,y){
+w <- rnorm(length(x[,1])) # We randomly initialise the weights
+log_reg_naive(w, x_dat, y_dat)
+# We use optim() to maximise the likelihood, this uses Nelder-Mead as a default
+optim(rep(0,length(x[,1])), log_reg_naive, x=x_dat, y=y_dat, control=list(maxit=200000))$par
+}
+devtools::test()
+load_all()
+load_all(wta.tennis)
+library(devtools)
+load_all(wta.tennis)
+devtools::test()
+devtools::test()
+setwd("~/Documents/group-proj/tennis.wta/R")
+setwd("~/Documents/group-proj/tennis.wta/R")
+devtools::test()
+rlang::last_error()
+setwd("~/Documents/group-proj/tennis.wta")

@@ -1,0 +1,7 @@
+"0",""
+"0","winner <- feature_matrix[length(feature_matrix[,1]),]"
+"0","feature_matrix_BT <- feature_matrix[-length(feature_matrix[,1]),]"
+"0","feature_matrix_BT <- rbind(feature_matrix_BT,BTprob,winner)"
+"0",""
+"0","test_matrix_BT <- rbind(test_matrix$matrix,BTprob_test)"
+"0",""

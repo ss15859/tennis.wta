@@ -1,0 +1,6 @@
+"0","probs <- predict_winner(test_data,lambda_hat,reduced_players)"
+"0","sum(probs>=0.5)/length(probs)"
+"1","[1]"
+"1"," 0.6529937"
+"1","
+"
